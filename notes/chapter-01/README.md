@@ -38,7 +38,7 @@ Calibre is not a single tool — it is a **suite of tools** that work together:
 | **Calibre RET tools** | Resolution Enhancement Technology |
 | **Calibre DFM** | Design for Manufacturability |
 
-![What Are the Various Calibre Tools](./screenshots/chapter-01/ch01-diagram-01.png)
+![What Are the Various Calibre Tools](../../resources/screenshots/chapter-01/ch01-diagram-01.png)
 
 > 💡 **Note:** In labs, **Calibre DESIGNrev** is used for layout viewing. It is the entry point from which you launch Calibre Interactive.
 
@@ -55,7 +55,7 @@ IC design is a multi-step process. Here is where Calibre fits in:
    - **Full Custom Editing** (manual layout drawing)
 4. **Calibre Physical Verification** — The layout is checked using Calibre DRC and LVS
 
-![IC Design and Layout Verification Flow](./screenshots/chapter-01/ch01-diagram-02.png)
+![IC Design and Layout Verification Flow](../../resources/screenshots/chapter-01/ch01-diagram-02.png)
 
 > ⚠️ **Important:** If Calibre finds errors, the designer must go back and fix the layout, then re-run verification. This loop continues until the layout is clean (zero errors).
 
@@ -71,7 +71,7 @@ The overall Calibre process connects multiple components:
 - **Calibre RVE** is used to view the results
 - **Calibre DESIGNrev** is the layout viewer that ties everything together
 
-![Basic Calibre Process Flow](./screenshots/chapter-01/ch01-diagram-03.png)
+![Basic Calibre Process Flow](../../resources/screenshots/chapter-01/ch01-diagram-03.png)
 
 ### Key Commands in This Flow:
 
@@ -204,7 +204,7 @@ calibre -gui -drc demo_runset
 **From Calibre DESIGNrev:**
 - Go to **Verification menu → Run nmDRC...** (or Run nmLVS...)
 
-![Starting Calibre Interactive from Calibre DESIGNrev](./screenshots/chapter-01/ch01-diagram-05.png)
+![Starting Calibre Interactive from Calibre DESIGNrev](../../resources/screenshots/chapter-01/ch01-diagram-05.png)
 
 ### Calibre Interactive Flow Overview
 
@@ -213,11 +213,11 @@ The GUI works like this:
 2. The GUI generates a rule file and builds a command line
 3. The command line invokes **Calibre nmDRC** (the actual engine)
 
-![Calibre Interactive Flow Overview](./screenshots/chapter-01/ch01-diagram-06.png)
+![Calibre Interactive Flow Overview](../../resources/screenshots/chapter-01/ch01-diagram-06.png)
 
 ### Calibre Interactive DRC — Key Features
 
-![Calibre Interactive Features and Flow](./screenshots/chapter-01/ch01-diagram-08.png)
+![Calibre Interactive Features and Flow](../../resources/screenshots/chapter-01/ch01-diagram-08.png)
 
 The GUI has several panels:
 - **Rules panel** — Specify the rules file and run directory
@@ -245,7 +245,7 @@ Launch with a pre-loaded runset:
 calibre -gui -drc demo_runset
 ```
 
-![Calibre Interactive DRC Overview](./screenshots/chapter-01/ch01-diagram-07.png)
+![Calibre Interactive DRC Overview](../../resources/screenshots/chapter-01/ch01-diagram-07.png)
 
 ---
 
@@ -264,7 +264,7 @@ calibredrv lab1.gds
 
 > ⚠️ **Warning:** Do NOT use `&` at the end — this will cause DESIGNrev to not function correctly.
 
-![Calibre DESIGNrev Overview](./screenshots/chapter-01/ch01-diagram-04.png)
+![Calibre DESIGNrev Overview](../../resources/screenshots/chapter-01/ch01-diagram-04.png)
 
 > 💡 **Note:** The `%` symbol at the terminal prompt after launching DESIGNrev indicates it is now running in `tcsh` shell mode.
 
@@ -290,7 +290,7 @@ calibre -rve demo_drc.db
 - Click **"Start RVE"** button in the GUI
 - Or set it to auto-launch after DRC completes in Run Control settings
 
-![Invoke RVE to View DRC Results](./screenshots/chapter-01/ch01-diagram-09.png)
+![Invoke RVE to View DRC Results](../../resources/screenshots/chapter-01/ch01-diagram-09.png)
 
 ### What You See in RVE:
 
@@ -309,7 +309,7 @@ Calibre Interactive has a built-in **search function** to quickly find settings:
 - Type any runset option name or keyword
 - The toolbar finds matches based on the currently active GUI page
 
-![Search Toolbar](./screenshots/chapter-01/ch01-diagram-10.png)
+![Search Toolbar](../../resources/screenshots/chapter-01/ch01-diagram-10.png)
 
 ---
 
@@ -328,7 +328,7 @@ mgcdocs
 - Click **Help menu → Help and Manuals**
 - This opens the **InfoHub PDF Bookcase**
 
-![Accessing Online Documentation](./screenshots/chapter-01/ch01-diagram-11.png)
+![Accessing Online Documentation](../../resources/screenshots/chapter-01/ch01-diagram-11.png)
 
 ### Support Resources:
 - **InfoHub** — Local documentation installed with Calibre
@@ -353,8 +353,8 @@ When using **3rd-party layout tools** (like Virtuoso, IC Station), you can set u
 - Enable **"Schematic Design Tool"** option
 - Select your tool from the dropdown (Cadence Composer, Synopsys, etc.)
 
-![Using Calibre With Other Design Tools](./screenshots/chapter-01/ch01-diagram-12.png)
-![Using Calibre With Other Design Tools - Schematic](./screenshots/chapter-01/ch01-diagram-13.png)
+![Using Calibre With Other Design Tools](../../resources/screenshots/chapter-01/ch01-diagram-12.png)
+![Using Calibre With Other Design Tools - Schematic](../../resources/screenshots/chapter-01/ch01-diagram-13.png)
 
 ---
 
@@ -367,7 +367,7 @@ If you use **Cadence Virtuoso** as your layout editor, here is how the Calibre i
 3. Calibre runs on that GDS file
 4. Results appear in RVE with cross-probing back to Virtuoso
 
-![Virtuoso Flow](./screenshots/chapter-01/ch01-diagram-15.png)
+![Virtuoso Flow](../../resources/screenshots/chapter-01/ch01-diagram-15.png)
 
 > 💡 **Tip:** Enable **"Export from layout viewer"** in Calibre Interactive's Inputs panel to automatically stream the layout from Virtuoso instead of specifying a static GDS file.
 
