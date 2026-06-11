@@ -38,7 +38,7 @@ Calibre is not a single tool — it is a **suite of tools** that work together:
 | **Calibre RET tools** | Resolution Enhancement Technology |
 | **Calibre DFM** | Design for Manufacturability |
 
-![What Are the Various Calibre Tools](./screenshots/chapter-01/ch01-diagram-01.png)
+![What Are the Various Calibre Tools](./resources/screenshots/chapter-01/ch01-diagram-01.png)
 
 > 💡 **Note:** In labs, **Calibre DESIGNrev** is used for layout viewing. It is the entry point from which you launch Calibre Interactive.
 
