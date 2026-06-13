@@ -58,8 +58,8 @@ calibre-drc-lvs-mastery/
 
 | # | Chapter | Topics | Status |
 |---|---------|--------|--------|
-| 01 | [Calibre Basic Concepts](./notes/chapter-01/) | 6 | 🔄 In Progress |
-| 02 | [Calibre nmDRC Basics](./notes/chapter-02/) | 7 | ⏳ Pending |
+| 01 | [Calibre Basic Concepts](./notes/chapter-01/) | 6 | ✅ Done |
+| 02 | [Calibre nmDRC Basics](./notes/chapter-02/) | 7 | ✅ Done |
 | 03 | [Calibre nmDRC Job Customization](./notes/chapter-03/) | 9 | ⏳ Pending |
 | 04 | [Calibre nmDRC Additional Topics](./notes/chapter-04/) | 8 | ⏳ Pending |
 | 05 | [Calibre nmLVS Basics](./notes/chapter-05/) | 9 | ⏳ Pending |
