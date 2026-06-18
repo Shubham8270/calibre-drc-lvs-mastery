@@ -41,6 +41,7 @@ Standard **DRC** (Design Rule Checking) and **LVS** (Layout vs. Schematic) are t
 
 These questions cannot be answered by geometric DRC alone because they require understanding how the layout is **electrically connected**. Checks that answer these kinds of questions are called **Electrical Rule Checks (ERC)**.
 
+
 ### Why ERC Requires LVS
 
 ERC has two special requirements that set it apart from standard DRC:
@@ -50,7 +51,7 @@ ERC has two special requirements that set it apart from standard DRC:
 
 Because of these requirements, **ERC checks must be executed as part of an LVS job** (not a standalone DRC job). The LVS engine already does connectivity extraction, so ERC piggybacks on that process.
 
-![Electrical Rule Checks — ERC](../../resources/screenshots/chapter-10/ch10-diagram-06.png)
+![Electrical Rule Checks — ERC](../../resources/screenshots/chapter-10/ch-10-content-04.png)
 
 > 💡 **Think of it this way:** DRC asks "Do my shapes follow the rules?" — ERC asks "Is my circuit connected correctly?" They are complementary checks.
 
@@ -83,6 +84,8 @@ ERC SUMMARY REPORT    report_file
 | `ERC SELECT CHECK` | Selects which specific ERC rule checks to execute |
 | `ERC SUMMARY REPORT` | Specifies a file to receive a summary of the ERC run (optional) |
 
+![Calibre ERC Rules](../../resources/screenshots/chapter-10/ch-10-content-05.png)
+
 > 💡 **Note:** ERC operations produce output layer data similar to DRC — you can highlight ERC results in the layout viewer using RVE, exactly as you would for DRC errors.
 
 ---
@@ -97,6 +100,8 @@ To execute a complete ERC job, you typically perform these tasks **in order**:
 4. **Limit ERC result count** — How many results per check before moving on?
 5. **Execute the ERC job** — Run Calibre LVS with ERC enabled
 6. **View ERC results** — Inspect findings in RVE
+
+![Calibre ERC Rules — Continued](../../resources/screenshots/chapter-10/ch-10-content-06.png)
 
 Each of these steps is covered in the sections below.
 
@@ -128,7 +133,7 @@ Navigate to the **ERC** panel in the left sidebar. You will find:
 - **ERC Results Database → File** — enter your results filename (e.g., `lab5a.erc.results`)
 - **ERC Summary Report → File** — enter your summary filename (e.g., `lab5a.erc.summary`)
 
-![Task: Specify ERC Output Information](../../resources/screenshots/chapter-10/ch10-diagram-01.png)
+![Task: Specify ERC Output Information](../../resources/screenshots/chapter-10/ch-10-diagram-01.png)
 
 > 💡 **Tip:** `ERC SUMMARY REPORT` is optional but highly recommended. It gives you a human-readable run log with statistics about what was checked.
 
@@ -159,11 +164,11 @@ This restricts ERC rule check execution to only the named rule(s).
 1. In the **ERC** panel, find **ERC Check Selection**
 2. The **Recipe** dropdown shows `Checks selected in the rules file`
 3. Click the **Edit** button — this opens the **Recipe Editor**
-4. In the Recipe Editor, you can browse all available checks and place checkmarks next to the ones you want to include
+4. In the Recipe Editor, browse all available checks and place checkmarks next to the ones you want to include
 
-![Task: Enable Selected ERC Rule Checks](../../resources/screenshots/chapter-10/ch10-diagram-02.png)
+![Task: Enable Selected ERC Rule Checks](../../resources/screenshots/chapter-10/ch-10-diagram-02.png)
 
-> 📌 **Key Point:** Rule checks do NOT need to contain ERC operations (like `PATHCHK`) to be executed. Any rule check can be selected for ERC execution — including standard DRC rule checks. `ERC SELECT CHECK` simply builds a list of checks to run.
+> 📌 **Key Point:** Rule checks do NOT need to contain ERC operations (like `PATHCHK`) to be executed. Any rule check can be selected for ERC execution. `ERC SELECT CHECK` simply builds a list of checks to run.
 
 ---
 
@@ -185,7 +190,6 @@ ERC UNSELECT CHECK  erc_rule_metal2_no_power
 
 ### How SELECT and UNSELECT work together:
 
-The workflow is:
 1. `ERC SELECT CHECK` first **builds a list** of checks to execute
 2. `ERC UNSELECT CHECK` then **removes specific checks** from that list
 
@@ -193,9 +197,9 @@ So if you select 10 checks and then unselect 2, you end up running 8.
 
 ### In the Calibre Interactive GUI:
 
-The Recipe Editor (same as above) shows checks with green checkmarks (selected) and red X marks (unselected). You can toggle individual checks on or off.
+The Recipe Editor shows checks with green checkmarks (selected) and red X marks (unselected). You can toggle individual checks on or off.
 
-![Task: Disable Selected ERC Rule Checks](../../resources/screenshots/chapter-10/ch10-diagram-03.png)
+![Task: Disable Selected ERC Rule Checks](../../resources/screenshots/chapter-10/ch-10-diagram-03.png)
 
 > 💡 **Tip:** The `rule_check` name can refer to either a **specific rule check name** or a **rule group name**. Using groups lets you enable/disable whole sets of related checks at once.
 
@@ -225,11 +229,9 @@ ERC MAXIMUM RESULTS  50
 
 ### In the Calibre Interactive GUI:
 
-In the **ERC** panel, check the **ERC Maximum Results** checkbox, then:
-- Set **Upper Limit** to `Count`
-- Enter the number (e.g., `50`) in the **Count** field
+In the **ERC** panel, check the **ERC Maximum Results** checkbox, then set **Upper Limit** to `Count` and enter the number.
 
-![Task: Limit ERC Result Count](../../resources/screenshots/chapter-10/ch10-diagram-04.png)
+![Task: Limit ERC Result Count](../../resources/screenshots/chapter-10/ch-10-diagram-04.png)
 
 > ⚠️ **Warning:** Setting the limit too low (e.g., 1) means you will miss most errors. Set a value that lets you understand the scope of the problem without overwhelming the results file.
 
@@ -270,7 +272,7 @@ LVS EXECUTE ERC  YES
 
 Click **Run LVS** in the ERC panel (with `LVS Execute ERC` set to `Yes`).
 
-![Task: Execute the ERC Job](../../resources/screenshots/chapter-10/ch10-diagram-05.png)
+![Task: Execute the ERC Job](../../resources/screenshots/chapter-10/ch-10-diagram-05.png)
 
 > 💡 **Tip:** Refer to the *Calibre Verification User's Manual* for the full list of command line options and additional run configurations.
 
@@ -283,7 +285,7 @@ After the ERC job completes, results are stored in the file you specified with `
 ### How to Access ERC Results in RVE:
 
 1. In the RVE **Navigator** tab, look for the **ERC** section
-2. Click **ERC Results** to open the results tab — this shows which checks fired and how many results each has
+2. Click **ERC Results** to open the results tab — shows which checks fired and how many results each has
 3. Click **ERC Summary** to open the summary text report
 
 ### What You See:
@@ -292,7 +294,6 @@ After the ERC job completes, results are stored in the file you specified with `
 - **ERC Summary tab** — full text log with run statistics, layer data, parameter settings
 - **Layout view** — clicking a result highlights the corresponding shapes in the layout, just like DRC results
 
-![Task: View ERC Results](../../resources/screenshots/chapter-10/ch10-diagram-06.png)
 
 > 💡 **Tip:** ERC results can be highlighted in the layout viewer exactly like any DRC results — the workflow is identical once you have the results database open in RVE.
 
@@ -314,7 +315,7 @@ DRC CHECK MAP  rule_check [GDSII|OASIS]  layer  datatype  filename
 - If you only want individual checks written to separate files, you can use `DRC CHECK MAP` on a per-check basis
 - Additional options are available — consult the *SVRF Manual*
 
-![Generating Geometric Output From Calibre](../../resources/screenshots/chapter-10/ch10-diagram-07.png)
+![Generating Geometric Output From Calibre](../../resources/screenshots/chapter-10/ch-10-content-13.png)
 
 ### Examples:
 
@@ -337,6 +338,8 @@ Plot_RESET {@ Output all metal shapes belonging to RESET net
 DRC CHECK MAP  Plot_RESET  GDSII  1  0  "./plots/RESET.gds"
 ```
 
+![Examples: Generating GDSII Output From Calibre](../../resources/screenshots/chapter-10/ch-10-content-14.png)
+
 > 📌 **Key Point:** The `DRC CHECK MAP` statement maps the output of a named rule check to a specific GDS layer number and datatype, then writes it to a named file. This is how you create custom geometry outputs from Calibre.
 
 ---
@@ -356,7 +359,7 @@ During the IC fabrication process, layers of metal and polysilicon interconnect 
 
 > ⚠️ **Why it matters:** A damaged gate cannot be repaired after fabrication. The chip is simply broken. Antenna violations that go undetected cause **yield loss** — chips that come out of the fab dead.
 
-![What Is an Antenna?](../../resources/screenshots/chapter-10/ch10-diagram-08.png)
+![What Is an Antenna?](../../resources/screenshots/chapter-10/ch-10-content-08.png)
 
 ---
 
@@ -374,7 +377,7 @@ A **large NAR** means there is a lot of interconnect area relative to the small 
 
 **Antenna rules flag nets whose NAR exceeds a specific threshold value** set by the foundry.
 
-![Antenna Rule Basics](../../resources/screenshots/chapter-10/ch10-diagram-09.png)
+![Antenna Rule Basics](../../resources/screenshots/chapter-10/ch-10-content-09.png)
 
 ### SVRF Syntax for Antenna Rules:
 
@@ -407,28 +410,28 @@ NET AREA RATIO  metal1  metal2  poly  gate  >  20
 | `metal1 metal2 poly` | The interconnect layers summed as antenna area |
 | `gate` | The layer defining gate area |
 | `> 20` | Flag if NAR exceeds 20 |
-| `RDB "antenna.rdb"` | Write results to this file |
+| `RDB "antenna.rdb"` | Write results to this side RDB file |
 | `metal1 metal2 poly` (after RDB) | Output shapes from all three layers to the RDB |
 
 > 📌 **Key Point about the `RDB` keyword:** If the `RDB` keyword is NOT used, only shapes from the **first listed layer** (metal1) are copied to the output. Specifying all three layers after `RDB` ensures you can see the full antenna path when you debug in RVE.
 
 ### Setting Up in Calibre Interactive:
 
-When the rule file is loaded into Calibre Interactive, the side RDB (antenna.rdb) appears in the **Outputs panel → Side RDBs** section. You can configure RVE to automatically open this side RDB when the run completes.
+When the rule file is loaded into Calibre Interactive, the side RDB (antenna.rdb) appears in the **Outputs panel → Side RDBs** section.
 
-![Antenna Rule Example](../../resources/screenshots/chapter-10/ch10-diagram-10.png)
+![Antenna Rule Example](../../resources/screenshots/chapter-10/ch-10-content-10.png)
 
 ### Viewing Antenna Results in RVE:
-
-![Antenna Rule Example — RVE Results](../../resources/screenshots/chapter-10/ch10-diagram-11.png)
 
 When you open the antenna RDB in RVE:
 
 - **Two antennas were found**, each represented by a **cluster of results**
 - The cluster contains multiple result shapes (the interconnect segments forming the antenna)
 - **Selecting the cluster name** shows cluster details in the bottom panel — including the computed NAR value
-- Clicking the **highlight button** (☀ icon) highlights the **entire cluster** (the full antenna path) in the layout
+- Clicking the **highlight button** highlights the **entire cluster** (the full antenna path) in the layout
 - The **computed Net Area Ratio value** is displayed in the details panel
+
+![Antenna Rule Example — RVE Results](../../resources/screenshots/chapter-10/ch-10-content-11.png)
 
 ---
 
@@ -436,7 +439,7 @@ When you open the antenna RDB in RVE:
 
 Antenna analysis is not static — as more metal layers are added during fabrication, the antenna situation changes:
 
-![Additional Antenna Considerations](../../resources/screenshots/chapter-10/ch10-diagram-12.png)
+![Additional Antenna Considerations](../../resources/screenshots/chapter-10/ch-10-content-12.png)
 
 ### How Antennas Change as Layers Are Added:
 
@@ -453,7 +456,7 @@ Antenna analysis is not static — as more metal layers are added during fabrica
 - **The NAR changes** at each step — a net that violated the antenna rule after metal1 may pass after metal2, or vice versa
 - Foundries specify antenna rules **per layer** to account for this layer-by-layer fabrication sequence
 
-> ⚠️ **Key Insight:** Antenna checking must account for the incremental nature of fabrication. As each layer is added, the antenna area and gate count both evolve. Calibre's antenna checks are designed to evaluate this correctly using the `NET AREA RATIO` operator.
+> ⚠️ **Key Insight:** Antenna checking must account for the incremental nature of fabrication. As each layer is added, the antenna area and gate count both evolve. Calibre's `NET AREA RATIO` operator is designed to evaluate this correctly.
 
 ---
 
