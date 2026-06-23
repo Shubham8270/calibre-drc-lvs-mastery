@@ -77,7 +77,7 @@ You can also define groups directly in the Calibre Interactive GUI without editi
 2. Enable the **Include Rule Statements** checkbox
 3. Enter your `GROUP` SVRF statement in the **Include SVRF Rule Statements** text box
 
-![Grouping Rule Checks — GUI](resources/screenshots/chapter-03/ch03-diagram-01.png)
+![Grouping Rule Checks — GUI](../../resources/screenshots/chapter-03/ch03-diagram-01.png)
 
 > **Tip:** Enabling the "Include Rule Statements" option includes the specified SVRF statements in the DRC run without modifying your main rule file.
 
@@ -109,7 +109,7 @@ To run only specific checks using the GUI:
 4. Select only the checks you want included in the run
 5. Click **Apply**
 
-![Enable Selected Rule Checks](resources/screenshots/chapter-03/ch03-diagram-02.png)
+![Enable Selected Rule Checks](../../resources/screenshots/chapter-03/ch03-diagram-02.png)
 
 ---
 
@@ -123,7 +123,7 @@ To exclude specific checks from a run:
 4. Uncheck the checks you do **not** want in the run
 5. Click **Apply**
 
-![Disable Selected Rule Checks](resources/screenshots/chapter-03/ch03-diagram-03.png)
+![Disable Selected Rule Checks](../../resources/screenshots/chapter-03/ch03-diagram-03.png)
 
 ---
 
@@ -168,7 +168,7 @@ VARIABLE LAYER m1
 **3. Calibre Interactive GUI:**
 Navigate to **Settings > Show Pages > Environment** to enable, disable, or change variables directly in the GUI.
 
-![Use Conditional Execution](resources/screenshots/chapter-03/ch03-diagram-04.png)
+![Use Conditional Execution](../../resources/screenshots/chapter-03/ch03-diagram-04.png)
 
 ---
 
@@ -195,7 +195,7 @@ In the Calibre Interactive GUI:
 2. Enable **DRC Maximum Results**
 3. Set the **Upper Limit** type and the **Maximum Result Count**
 
-![Limit Result Count](resources/screenshots/chapter-03/ch03-diagram-05.png)
+![Limit Result Count](../../resources/screenshots/chapter-03/ch03-diagram-05.png)
 
 ---
 
@@ -210,7 +210,7 @@ Instead of running DRC on the entire layout, you can restrict verification to a 
 3. Either type the opposing-corner window coordinates manually, or click the button and drag a rectangle in the layout viewer
 4. The GUI automatically adds a **halo** around your window
 
-![Check Selected Area](resources/screenshots/chapter-03/ch03-diagram-06.png)
+![Check Selected Area](../../resources/screenshots/chapter-03/ch03-diagram-06.png)
 
 > **Note:** The GUI expands your selected window by a "halo" to avoid false edge errors. Only portions of objects totally inside the expanded window are processed.
 
@@ -226,7 +226,7 @@ When you use the Area DRC option, Calibre Interactive expands the layout window 
 
 The diagram below shows the impact of different halo settings on which results are included:
 
-![Layout Window Halos](resources/screenshots/chapter-03/ch03-diagram-07.png)
+![Layout Window Halos](../../resources/screenshots/chapter-03/ch03-diagram-07.png)
 
 | Setting | Effect |
 |---|---|
@@ -370,7 +370,7 @@ To enable multi-threading on a single host:
 4. Select the **Number of CPUs** to use
 5. Optionally enable **Hyperscale**
 
-![Use Calibre MT to Enhance Performance](resources/screenshots/chapter-03/ch03-diagram-08.png)
+![Use Calibre MT to Enhance Performance](../../resources/screenshots/chapter-03/ch03-diagram-08.png)
 
 ---
 
@@ -385,7 +385,7 @@ To distribute across networked hosts:
 5. Click **Add Host (+)** to manually enter remote host names
 6. All hosts must be of the same type
 
-![Use MTFlex to Enhance Performance](resources/screenshots/chapter-03/ch03-diagram-09.png)
+![Use MTFlex to Enhance Performance](../../resources/screenshots/chapter-03/ch03-diagram-09.png)
 
 ---
 
@@ -395,7 +395,7 @@ If you only need to change a basic set of options, you can use the **Simplified 
 
 To activate: **Configurations > Simple DRC**
 
-![Simplified DRC View](resources/screenshots/chapter-03/ch03-diagram-10.png)
+![Simplified DRC View](../../resources/screenshots/chapter-03/ch03-diagram-10.png)
 
 ---
 
@@ -427,7 +427,7 @@ Then in RVE:
 2. Enable the **Priority** column
 3. Click the **Priority** column heading to sort results by priority
 
-![Display Results in Priority Order](resources/screenshots/chapter-03/ch03-diagram-11.png)
+![Display Results in Priority Order](../../resources/screenshots/chapter-03/ch03-diagram-11.png)
 
 ---
 
@@ -441,7 +441,7 @@ Use the RVE taskbar menu to specify the window behavior for each new highlight:
 
 Use the RVE **Options** tab to set the zoom factor ratio.
 
-![Control the Layout Window](resources/screenshots/chapter-03/ch03-diagram-12.png)
+![Control the Layout Window](../../resources/screenshots/chapter-03/ch03-diagram-12.png)
 
 ---
 
@@ -452,11 +452,11 @@ Use the RVE taskbar menu to enable or disable **Clear Existing Highlights** when
 - **Option disabled:** New highlights are added on top of existing ones (both visible simultaneously)
 - **Option enabled:** Previous highlights are cleared before showing new ones
 
-![Customize Result Highlighting](resources/screenshots/chapter-03/ch03-diagram-13.png)
+![Customize Result Highlighting](../../resources/screenshots/chapter-03/ch03-diagram-13.png)
 
 You can also open the RVE **Options** tab (gear icon) and configure detailed highlighting behavior, including showing check names, result IDs, and properties when highlighting.
 
-![Customize Result Highlighting Options](resources/screenshots/chapter-03/ch03-diagram-14.png)
+![Customize Result Highlighting Options](../../resources/screenshots/chapter-03/ch03-diagram-14.png)
 
 ---
 
@@ -481,7 +481,7 @@ min_ext_diff_poly {
 }
 ```
 
-![Define Layer Highlighting](resources/screenshots/chapter-03/ch03-diagram-15.png)
+![Define Layer Highlighting](../../resources/screenshots/chapter-03/ch03-diagram-15.png)
 
 ---
 
@@ -503,7 +503,7 @@ You can override the colors defined in the rule file using the RVE GUI:
 4. Choose your color
 5. Repeat as needed, then click **OK**
 
-![Override Rule Check Color Choices](resources/screenshots/chapter-03/ch03-diagram-16.png)
+![Override Rule Check Color Choices](../../resources/screenshots/chapter-03/ch03-diagram-16.png)
 
 ---
 
@@ -516,7 +516,7 @@ To **retain** highlight geometries after exiting RVE:
 2. Go to the **Highlighting** category
 3. **Uncheck** the option: *Clear highlights in design tools when RVE exits*
 
-![Clear Highlights on RVE Exit](resources/screenshots/chapter-03/ch03-diagram-17.png)
+![Clear Highlights on RVE Exit](../../resources/screenshots/chapter-03/ch03-diagram-17.png)
 
 ---
 
