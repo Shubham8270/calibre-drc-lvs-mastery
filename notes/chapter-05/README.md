@@ -9,7 +9,6 @@
 
 ---
 
-![Calibre nmLVS Process Flow — Chapter Title](../../resources/screenshots/chapter-05/ch-05-diagram-01.png)
 
 ---
 
