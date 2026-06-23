@@ -9,7 +9,7 @@
 
 ---
 
-![Calibre nmLVS Process Flow — Chapter Title](ch-05-diagram-01.png)
+![Calibre nmLVS Process Flow — Chapter Title](../../resources/screenshots/chapter-05/ch-05-diagram-01.png)
 
 ---
 
@@ -26,7 +26,7 @@ Think of LVS as a **consistency check** between two representations of the same 
 
 > **Key Principle:** If you drew a transistor in your schematic but missed it in the layout — or if you connected two nets incorrectly in the layout — LVS will catch it.
 
-![What Is Layout versus Schematic?](ch-05-diagram-02.png)
+![What Is Layout versus Schematic?](../../resources/screenshots/chapter-05/ch-05-diagram-02.png)
 
 ### How LVS Works — Two Phases
 
@@ -44,7 +44,7 @@ Think of LVS as a **consistency check** between two representations of the same 
 
 The full nmLVS process flow connects several components together:
 
-![Calibre nmLVS Layout Verification Process Flow](ch-05-diagram-03.png)
+![Calibre nmLVS Layout Verification Process Flow](../../resources/screenshots/chapter-05/ch-05-diagram-03.png)
 
 ### Inputs
 - **Rule Files** — LVS rules provided by the foundry (PDK), telling Calibre how to recognize devices and connectivity
@@ -84,7 +84,6 @@ LVS is a **two-step process** that can be run separately or combined:
 1. **Extract the layout netlist**
 2. **Compare the extracted netlist with the source netlist**
 
-![Executing a Calibre nmLVS Job](ch-05-diagram-05.png)
 
 ### Combined Extract/Compare Job — Key Tasks
 
@@ -137,7 +136,7 @@ calibre -gui -lvs
 # Or from Calibre DESIGNrev Verification menu
 ```
 
-![Task: Specify Rule File](ch-05-content-03.png)
+![Task: Specify Rule File](../../resources/screenshots/chapter-05/ch-05-content-03.png)
 
 ### In the GUI
 
@@ -154,7 +153,7 @@ calibre -gui -lvs
 
 After setting the rule file, you configure where Calibre should find your layout.
 
-![Task: Specify Layout Input Information](ch-05-content-04.png)
+![Task: Specify Layout Input Information](../../resources/screenshots/chapter-05/ch-05-content-04.png)
 
 ### In the GUI — Inputs Pane
 
@@ -177,7 +176,7 @@ LAYOUT PATH "/home/student/work/lab1.gds"
 
 The **source netlist** is the schematic-derived netlist that Calibre will compare against your layout.
 
-![Task: Specify Source Information](ch-05-content-05.png)
+![Task: Specify Source Information](../../resources/screenshots/chapter-05/ch-05-content-05.png)
 
 ### In the GUI — Inputs Pane (Source Path Section)
 
@@ -202,7 +201,7 @@ SOURCE PATH "/home/student/work/lab1.spi"
 
 You need to tell Calibre where to save results so you can review them later.
 
-![Task: Specify Output Information](ch-05-content-07.png)
+![Task: Specify Output Information](../../resources/screenshots/chapter-05/ch-05-content-07.png)
 
 ### In the GUI — Outputs Pane
 
@@ -244,7 +243,7 @@ LVS INJECT LOGIC NO           # Do not inject logic optimization
 
 For automation or batch flows, you can run LVS entirely from the command line without the GUI.
 
-![Running Calibre LVS From Command Line](ch-05-content-10.png)
+![Running Calibre LVS From Command Line](../../resources/screenshots/chapter-05/ch-05-content-10.png)
 
 ### Steps
 
@@ -268,7 +267,7 @@ calibre -spice layout.netlist -lvs -hier lvs.rules
 
 You can also run LVS directly from Calibre Interactive GUI.
 
-![Running Calibre nmLVS From the GUI](ch-05-content-11.png)
+![Running Calibre nmLVS From the GUI](../../resources/screenshots/chapter-05/ch-05-content-11.png)
 
 ### Steps
 
@@ -283,7 +282,7 @@ You can also run LVS directly from Calibre Interactive GUI.
 
 After running LVS, always check the report files to understand what happened.
 
-![Task: Review the LVS Report](ch-05-content-15.png)
+![Task: Review the LVS Report](../../resources/screenshots/chapter-05/ch-05-content-15.png)
 
 ### Viewing the Report in the GUI
 
@@ -317,7 +316,7 @@ Total Inst:         0        14
 
 After an LVS run, use **Calibre RVE** to visually locate and understand errors.
 
-![Common LVS RVE Tasks](ch-05-content-20.png)
+![Common LVS RVE Tasks](../../resources/screenshots/chapter-05/ch-05-content-20.png)
 
 Common tasks you can do in LVS RVE:
 
@@ -336,7 +335,7 @@ When your design has repeated sub-blocks (like standard cells, macros, or IP blo
 
 **Calibre nmLVS-H** (Hierarchical) supports this through **H-Cells** (Hierarchical Cells).
 
-![Hierarchical LVS — Objectives](ch-05-content-25.png)
+![Hierarchical LVS — Objectives](../../resources/screenshots/chapter-05/ch-05-content-25.png)
 
 ### Objectives for H-Cells
 
@@ -372,7 +371,7 @@ a33*              a3310
 
 > 💡 **Note:** Wildcards (`*`) are supported in layout cell names. Calibre treats cell names as **case-insensitive** and will issue a warning for any cell names not found in the layout or source.
 
-![Specifying H-Cell Names](ch-05-content-30.png)
+![Specifying H-Cell Names](../../resources/screenshots/chapter-05/ch-05-content-30.png)
 
 ### In the GUI — H-Cells Pane
 
@@ -402,7 +401,7 @@ LVS BOX [BLACK | GRAY [DEVICES]] [LAYOUT [ONLY]] [[TRANSFORM] SOURCE]
          cellname ['('pin_swap_list')' …] …
 ```
 
-![LVS BOX in Calibre Interactive GUI](ch-05-content-34.png)
+![LVS BOX in Calibre Interactive GUI](../../resources/screenshots/chapter-05/ch-05-content-34.png)
 
 ### In the GUI — Options Pane
 
