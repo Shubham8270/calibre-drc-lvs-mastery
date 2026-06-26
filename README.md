@@ -14,7 +14,6 @@ This repository is a self-contained study resource for learning **Mentor Calibre
 Whether you're a student, a fresh engineer, or someone switching into physical verification — this repo has everything you need.
 
 ---
-
 ## 📂 Repo Structure
 
 ```
