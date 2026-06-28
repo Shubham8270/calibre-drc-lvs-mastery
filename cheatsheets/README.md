@@ -472,7 +472,6 @@ Temporary flattening of cells during DRC.
 ---
 
 # One-Minute Revision
-
 ```text
 DRC = Manufacturability
 
